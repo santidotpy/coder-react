@@ -21,3 +21,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+
+/src/components/Counter
+/src/components/Categories
+/src/components/MockApi
+/src/components/SearchBox
