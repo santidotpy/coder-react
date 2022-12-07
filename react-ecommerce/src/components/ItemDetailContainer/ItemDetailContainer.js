@@ -29,32 +29,10 @@ const ItemDetailContainer = () => {
 
 
     return (
-        
-
-
-
         <div>
           <h2>Item Detail</h2>
           <ItemDetail {...item}/>
-            {/* <h2>Item Detail</h2>
-            <div>
-                <h2>{item.title}</h2>
-                <p>{item.description}</p>
-                <p>{item.price}</p>
-                <img src={item
-                    .pictureUrl} className='imageSize' alt={item.title} />
-            </div>     */}
-        </div>    
-        // <div>
-        //     <h2>Item Detail</h2>
-        //     { items.map(item => (
-        //         <div key={item.id}>
-        //         <h2>{item.title}</h2>
-        //         <p>{item.description}</p>
-        //         <p>{item.price}</p>
-        //         </div>
-        //     )) }
-        // </div>
+        </div>
     )
 }
 

@@ -31,19 +31,9 @@ const Item = ({ item }) => {
                 </CardContent>
                 <CardActions>
                 <Link to={`/item/${item.id}`}><Button type='submit' variant="contained">Details</Button></Link> 
-                    {/* <Button size="small">Share</Button>
-                    <Button size="small">Learn More</Button> */}
                 </CardActions>
                 </Card>
 
-
-
-            {/* <h2>{item.title}</h2>
-            <p>{item.category}</p>
-            <p>{item.description}</p>
-            <p>$ {item.price}</p>
-            <img src={item.pictureUrl} className='imageSize' alt={item.title} />
-            <Link to={`/item/${item.id}`}><Button type='submit' variant="contained">Details</Button></Link> */}
         </div>
     )
 }
