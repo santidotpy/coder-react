@@ -1,16 +1,13 @@
+import Item from "../Item/Item"
+
 const ItemList = ({ items }) => {
     return (
         <div>
-            { items.map(item => (
-                <div key={item.id}>
-                <h2>{item.title}</h2>
-                <p>{item.description}</p>
-                <p>{item.price}</p>
-                </div>
-            )) }
+            {
+                items.map(item => <Item key={item.id} item={item} />)
+            }
         </div>
     )
 }
 
-
-export default ItemList;
+export default ItemList
