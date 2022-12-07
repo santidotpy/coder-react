@@ -14,7 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import CartWidget from '../CartWidget/CartWidget';
 
-const pages = ['Products', 'About', 'Contact'];
+const pages = [{text:'Products', href: '/'}, {text:'Perifericos', href: '/category/Perifericos'}, {text:'Games&Consoles', href: '/category/Games&Consoles'}, {text:'About', href: '/'}, {text:'Contact', href: '/'}];
 // const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function ResponsiveAppBar() {
@@ -90,7 +90,7 @@ function ResponsiveAppBar() {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                  <Typography textAlign="center">{page.text}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -119,10 +119,11 @@ function ResponsiveAppBar() {
             {pages.map((page) => (
               <Button
                 key={page}
+                href={page.href}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                {page}
+                {page.text}
               </Button>
             ))}
           </Box>

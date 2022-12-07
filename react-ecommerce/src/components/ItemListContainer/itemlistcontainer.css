@@ -3,3 +3,7 @@
 .greetingFont{
     font-family: 'Noto Sans JP', sans-serif;
 }
+
+.imageSize{
+    width: 250px;
+}
