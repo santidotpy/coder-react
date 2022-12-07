@@ -2,14 +2,27 @@ import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import Meli from './components/MockApi/Meli';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 // acordate de que agregaste css en la otra carpeta
-
+// sigo en 1:08
 function App() {
   return (
     <div className="App">
+      <BrowserRouter>
       <Navbar />
-      <ItemListContainer greeting="Welcome Back!" />
+        <Routes>
+          <Route path="/" element={<ItemListContainer greeting="Welcome Back!" />} /> {/* se encarga de obtener datos para listar */}
+          <Route path="/category/:categoryId" element={<ItemListContainer greeting="Welcome Back!" />} />
+          <Route path="/item/:itemId" element={<ItemDetailContainer />} /> {/* detalle de un producto*/}
+
+
+
+        </Routes>
+      </BrowserRouter>
+
+      {/* <ItemListContainer greeting="Welcome Back!" /> */}
       {/* <Meli /> */}
     </div>
   );
