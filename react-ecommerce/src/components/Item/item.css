@@ -1,0 +1,5 @@
+.imageSize {
+    width: 250px;
+    margin: auto;
+    object-fit: contain;
+}

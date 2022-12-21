@@ -7,15 +7,17 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
+// import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
+// import AdbIcon from '@mui/icons-material/Adb';
+import LandscapeIcon from '@mui/icons-material/Landscape';
 import CartWidget from '../CartWidget/CartWidget';
 
 const pages = [{text:'Products', href: '/'}, {text:'Perifericos', href: '/category/Perifericos'}, {text:'Games&Consoles', href: '/category/Games&Consoles'}, {text:'About', href: '/'}, {text:'Contact', href: '/'}];
 // const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const page_name = 'Everest';
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -40,7 +42,10 @@ function ResponsiveAppBar() {
     <AppBar position="static" style={{background: 'black'}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
+          <LandscapeIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+
+          
           <Typography
             variant="h6"
             noWrap
@@ -56,7 +61,7 @@ function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
-            Cool Name Here
+            {page_name}
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -95,7 +100,7 @@ function ResponsiveAppBar() {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          <LandscapeIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
@@ -113,7 +118,7 @@ function ResponsiveAppBar() {
             }}
           >
             {/* todavia no decido el nombre definitivo */}
-            Cool Name Here 
+            {page_name} 
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (

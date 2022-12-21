@@ -7,3 +7,9 @@
 .imageSize{
     width: 250px;
 }
+
+.listar{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}

@@ -13,7 +13,7 @@ const products = [
         title: "Logitech G Series Lightspeed G305",
         description: "Mouse de juego inalámbrico black",
         price: 500,
-        pictureUrl: "https://http2.mlstatic.com/D_NQ_NP_977588-MLA51172463642_082022-O.webp",
+        pictureUrl: "https://http2.mlstatic.com/D_NQ_NP_938151-MLA45093779643_032021-O.webp",
         stock: 0,
         category: "Perifericos"
     },
@@ -36,12 +36,12 @@ export const getProducts = () => {
 
 export const getProductById = (id) => {
     return new Promise((resolve, reject) => {
-        setTimeout(() => resolve(products.find(product => product.id == id)), 2000)
+        setTimeout(() => resolve(products.find(product => product.id === id)), 2000)
     })
 }
 
 export const getProductsByCategory = (category) => {
     return new Promise((resolve, reject) => {
-        setTimeout(() => resolve(products.filter(product => product.category == category)), 2000)
+        setTimeout(() => resolve(products.filter(product => product.category === category)), 2000)
     })
 }
