@@ -1,1 +1,1 @@
- # Try it out on [Vercel](https://react-ecommerce-santi.vercel.app/)!
+ # Try it out on [here](https://react-ecommerce-santi.vercel.app/)!
