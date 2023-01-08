@@ -7,45 +7,52 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-// import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-// import AdbIcon from '@mui/icons-material/Adb';
-import LandscapeIcon from '@mui/icons-material/Landscape';
+import LandscapeRoundedIcon from '@mui/icons-material/LandscapeRounded';
 import CartWidget from '../CartWidget/CartWidget';
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
+import { Link } from 'react-router-dom';
+// import Avatar from '@mui/material/Avatar';
+// import Tooltip from '@mui/material/Tooltip';
+
 
 const pages = [{text:'Products', href: '/'}, {text:'Perifericos', href: '/category/Perifericos'}, {text:'Games&Consoles', href: '/category/Games&Consoles'}, {text:'About', href: '/'}, {text:'Contact', href: '/'}];
 // const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+
 const page_name = 'Everest';
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+  // const [anchorElUser, setAnchorElUser] = React.useState(null);
+  
+  const { getQuantity } = useContext(CartContext);
+
+  const totalQuantity = getQuantity();
+
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
+  // const handleOpenUserMenu = (event) => {
+  //   setAnchorElUser(event.currentTarget);
+  // };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
+  // const handleCloseUserMenu = () => {
+  //   setAnchorElUser(null);
+  // };
 
   return (
     <AppBar position="static" style={{background: 'black'}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
-          <LandscapeIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-
-          
+          <LandscapeRoundedIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          <Link to="/" style={{textDecoration: 'none', color: 'white'}}>
           <Typography
             variant="h6"
             noWrap
@@ -63,6 +70,7 @@ function ResponsiveAppBar() {
           >
             {page_name}
           </Typography>
+          </Link>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -95,12 +103,15 @@ function ResponsiveAppBar() {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
+                  <Link to={page.href} style={{textDecoration: 'none', color: 'black'}}>
                   <Typography textAlign="center">{page.text}</Typography>
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
-          <LandscapeIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          <LandscapeRoundedIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          <Link to="/" style={{textDecoration: 'none', color: 'white'}}>
           <Typography
             variant="h5"
             noWrap
@@ -118,10 +129,12 @@ function ResponsiveAppBar() {
             }}
           >
             {/* todavia no decido el nombre definitivo */}
-            {page_name} 
+            {page_name}
           </Typography>
+          </Link>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
+              <Link to={page.href} style={{textDecoration: 'none', color: 'white'}}>
               <Button
                 key={page}
                 href={page.href}
@@ -130,10 +143,13 @@ function ResponsiveAppBar() {
               >
                 {page.text}
               </Button>
+              </Link>
             ))}
           </Box>
-
-          <CartWidget />
+          <Link to="/cart" style={{textDecoration: 'none', color: 'white'}}>
+            <CartWidget />
+          </Link>
+          {/* <CartWidget quantity={totalQuantity}/> */}
 
         </Toolbar>
       </Container>

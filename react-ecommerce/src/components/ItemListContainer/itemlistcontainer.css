@@ -8,8 +8,12 @@
     width: 250px;
 }
 
-.listar{
+.itemList{
     display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-evenly;
     flex-wrap: wrap;
-    justify-content: space-around;
+    align-content: center;
+
 }
